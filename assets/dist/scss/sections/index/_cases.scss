@@ -37,14 +37,20 @@
   }
 
   &__img{
+    overflow: hidden;
     img{
       @include img;
       height: 120px;
+      transition: all 1s;
       @media (min-width: $screen-md) {
         height: 216px;
       }
       @media (min-width: $screen-xxl) {
         height: 251px;
+      }
+
+      &:hover{
+        transform: scale(1.05);
       }
     }
   }
