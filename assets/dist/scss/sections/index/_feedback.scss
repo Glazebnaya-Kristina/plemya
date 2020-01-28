@@ -1,0 +1,207 @@
+@import "../../helper/variables";
+@import "../../helper/mixins";
+
+.feedback {
+  $block-name: &; // #{$block-name}__element
+
+  padding: 30px 0 0;
+  margin-bottom: 400px;
+  background: rgb(11, 11, 10);
+  background: linear-gradient(45deg, #0b0b0a 0%, rgba(19, 18, 19, 0.9304096639) 60%, rgba(38, 37, 38, 0.85) 100%);
+  @media (min-width: $screen-xl) {
+    //padding: 51px 0 0;
+    padding: 176px 0 0;
+  }
+
+  &__inner {
+    @include container;
+    @media (min-width: $screen-md) {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      width: 768px;
+    }
+    @media (min-width: $screen-lg) {
+      width: 1024px;
+    }
+    @media (min-width: $screen-xl) {
+      width: 1280px;
+    }
+    @media (min-width: $screen-xxxl) {
+      width: 1600px;
+    }
+
+    > img {
+      display: block;
+      height: 350px;
+      margin: 0 auto;
+      @media (min-width: $screen-md) {
+        height: 485px;
+        margin: 0;
+      }
+      @media (min-width: $screen-lg) {
+        height: 680px;
+      }
+      @media (min-width: $screen-xl) {
+        height: 750px;
+      }
+      @media (min-width: $screen-xxxl) {
+        height: 866px;
+        margin-left: 38px;
+      }
+    }
+  }
+
+  &__title {
+    @include hide-text;
+  }
+
+  &__content {
+    position: relative;
+    padding: 30px 20px;
+    text-align: center;
+    background-color: #050404;
+    @media (min-width: $screen-md) {
+      max-width: 400px;
+      text-align: left;
+    }
+    @media (min-width: $screen-lg) {
+      max-width: 530px;
+    }
+    @media (min-width: $screen-xl) {
+      max-width: 767px;
+    }
+    @media (min-width: $screen-xxxl) {
+      padding: 56px 67px 73px;
+    }
+
+    &:after{
+      @include pseudo;
+      bottom: 0;
+      right: 0;
+      width: 132px;
+      height: 63px;
+      background-image: url('../img/decor-right-big.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      @media (min-width: $screen-md) {
+        width: 132px;
+        height: 63px;
+      }
+      @media (min-width: $screen-xxxl) {
+        width: 310px;
+        height: 130px;
+      }
+    }
+  }
+
+  &__manager-name {
+    margin-top: 25px;
+    font-weight: 300;
+    font-style: italic;
+
+    @media (min-width: $screen-xxxl) {
+      margin-top: 43px;
+    }
+
+    strong {
+      font-style: normal;
+      font-weight: 700;
+    }
+  }
+
+  &__text {
+    margin-top: 25px;
+    padding-bottom: 25px;
+    border-bottom: 2px solid rgba(#8f8f8f, .12);
+
+    @media (min-width: $screen-xxxl) {
+      margin-top: 31px;
+      padding-bottom: 44px;
+    }
+
+    p {
+      @media (min-width: $screen-xxxl) {
+        line-height: 31px;
+      }
+
+      &:not(:first-child) {
+        margin-top: 25px;
+      }
+    }
+
+    a {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 15px;
+      font-weight: 700;
+      @media (min-width: $screen-xxxl) {
+        margin-left: 37px;
+      }
+    }
+
+    i {
+      margin-right: 5px;
+      background: linear-gradient(90deg, rgba(254, 164, 255, 1), rgba(174, 54, 202, 1));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      @media (min-width: $screen-xl) {
+        font-size: 20px;
+      }
+    }
+
+    strong{
+      margin: 0 5px;
+    }
+  }
+
+  &__wrapper-form {
+    margin-top: 25px;
+    @media (min-width: $screen-xxxl) {
+      margin-top: 40px;
+    }
+  }
+
+  &__form-list {
+    @include ul-reset;
+    margin-top: 25px;
+    @media (min-width: $screen-md) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    @media (min-width: $screen-xxxl) {
+      margin-top: 34px;
+    }
+  }
+
+  &__form-item {
+    @media (min-width: $screen-lg) {
+      max-width: 45%;
+      width: 100%;
+    }
+    @media (min-width: $screen-xxxl) {
+      max-width: 39%;
+    }
+
+    &:not(:first-child) {
+      margin-top: 10px;
+      @media (min-width: $screen-md) {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+    margin-top: 35px;
+    @media (min-width: $screen-md) {
+      margin: 0;
+      margin-top: 35px;
+    }
+    @media (min-width: $screen-xxxl) {
+      margin-top: 69px;
+    }
+  }
+}
