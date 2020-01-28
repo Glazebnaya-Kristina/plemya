@@ -4,6 +4,7 @@
 .header {
   $block-name: &; // #{$block-name}__element
 
+  padding: 45px 0;
   background: rgb(11, 11, 10);
   background: linear-gradient(45deg, #0b0b0a 0%, rgba(19, 18, 19, 0.9304096639) 60%, rgba(38, 37, 38, 0.85) 100%);
   @media (min-width: $screen-md) {
