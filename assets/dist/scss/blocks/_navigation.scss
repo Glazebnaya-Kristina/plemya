@@ -1,0 +1,155 @@
+.navigation {
+  $block-name: &; // #{$block-name}__element
+  display: none;
+
+  @media (min-width: $screen-md) {
+    display: block;
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 1;
+    //background-color: $white;
+    background: rgb(17,15,17);
+    background: linear-gradient(45deg, rgba(17,15,17,1) 0%, rgba(35, 38, 39, 1) 50%, rgba(65, 66, 67, 1) 100%);
+    @media (min-width: $screen-md) {
+      background: transparent;
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($black, .3);
+    animation: opacity 0.5s ease-in-out;
+    @media (min-width: $screen-md) {
+      display: none;
+    }
+
+    &--opened {
+      z-index: 0;
+      opacity: 1;
+    }
+  }
+
+  &__list-wrapper {
+    width: 100%;
+    padding: 0 15px;
+    @media (min-width: $screen-md) {
+      padding: 0;
+      width: auto;
+    }
+  }
+
+  &__list {
+    @include ul-reset;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 93px 38px 77px;
+    line-height: normal;
+
+    @media (min-width: $screen-md) {
+      flex-direction: row;
+      padding: 0;
+    }
+
+    li {
+      &:not(:first-child) {
+        margin-top: 17px;
+        @media (min-width: $screen-md) {
+          margin-top: 0;
+          margin-left: 15px;
+        }
+        @media (min-width: $screen-lg) {
+          margin-left: 3%;
+        }
+      }
+    }
+
+    a {
+      color: $white;
+      font-weight: 500;
+      text-transform: uppercase;
+      background: linear-gradient(90deg, rgb(255, 255, 255), rgba(255, 255, 255, 0)), rgb(255, 255, 255);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transition: background 1s;
+      @media (min-width: $screen-lg) {
+        font-size: 18px;
+        letter-spacing: 1.5px;
+      }
+
+      &:hover,
+      &:focus {
+        outline: none;
+        background: linear-gradient(90deg, rgba(89, 49, 182, .8), rgba(254, 164, 255, .3), rgba(174, 54, 202, .7));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transition: background 1s;
+      }
+    }
+  }
+
+  &__close {
+    display: none;
+    position: absolute;
+    left: 15px;
+    top: 17px;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    color: $white;
+    font-size: 27px;
+    outline: none;
+    cursor: pointer;
+    transition: $transition-time;
+
+    &:hover,
+    &:focus {
+      i{
+        opacity: .8;
+      }
+    }
+
+    @media (min-width: $screen-md) {
+      position: relative;
+      left: auto;
+      top: auto;
+    }
+
+    span {
+      @include hide-text;
+    }
+
+    i{
+      font-size: 18px;
+      transition: $transition-time;
+    }
+  }
+
+
+  &--opened {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    #{$block-name}__inner {
+      animation: slide-down 0.5s ease-in-out;
+    }
+
+    #{$block-name}__close {
+      display: block;
+    }
+  }
+}

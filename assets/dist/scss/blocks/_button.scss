@@ -1,0 +1,73 @@
+.button {
+  $block-name:                &; // #{$block-name}__element
+
+  z-index: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 11px 0;
+  max-width: 258px;
+  width: 100%;
+  font-family: inherit;
+  font-weight: 500;
+  color: inherit;
+  line-height: $line-height;
+  text-decoration: none;
+  text-transform: none;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  user-select: none;
+  background-color: transparent;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition-property: background-color, color, box-shadow;
+  transition-duration: $transition-time;
+  outline: none;
+
+  @media (min-width: $screen-xxxl) {
+    padding: 7px 0;
+    font-size: 22px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    background-color: #0d0d0c;
+    z-index: -1;
+    width: 98%;
+    height: 91%;
+    border-radius: 50px;
+    transition: $transition-time;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -2;
+    background: linear-gradient(90deg, rgba(89, 49, 182, 1), rgba(254, 164, 255, 1), rgba(174, 54, 202, 1));
+    border-radius: 50px;
+    transition: background $transition-time;
+  }
+
+  &:hover,
+  &:focus{
+    &::after{
+      z-index: -1;
+
+    }
+    &::before{
+      z-index: -2;
+      opacity: 0;
+    }
+  }
+
+}

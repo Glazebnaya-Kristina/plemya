@@ -1,0 +1,30 @@
+.menu-burger{
+  $block-name:                &; // #{$block-name}__element
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  //width: 39px;
+  //height: 39px;
+  padding: 0;
+  border: none;
+  //border-radius: 50%;
+  background-color: transparent;
+  transition: $transition-time;
+  cursor: pointer;
+  &:focus,
+  &:hover{
+    outline: none;
+    i{
+      opacity: .8;
+    }
+  }
+  &__rel{
+    @include hide-text;
+  }
+
+  i{
+    font-size: 30px;
+    color: $white;
+    transition: $transition-time;
+  }
+}

@@ -1,0 +1,36 @@
+.lang {
+  @include ul-reset;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 15px;
+  font-weight: 700;
+  color: #838383;
+  @media (min-width: $screen-xl) {
+    font-size: 18px;
+  }
+
+  li{
+    &:not(:first-child){
+      margin-left: 10px;
+      @media (min-width: $screen-xxxl) {
+        margin-left: 16px;
+      }
+    }
+  }
+
+  a{
+    outline: none;
+    &:hover,
+    &:active{
+      color: $white;
+    }
+  }
+
+  .active {
+    a{
+      color: $white;
+      text-decoration: underline;
+    }
+  }
+}

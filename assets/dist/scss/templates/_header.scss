@@ -1,0 +1,227 @@
+@import "../helper/variables";
+@import "../helper/mixins";
+
+.header {
+  $block-name: &; // #{$block-name}__element
+
+  background: rgb(11, 11, 10);
+  background: linear-gradient(45deg, #0b0b0a 0%, rgba(19, 18, 19, 0.9304096639) 60%, rgba(38, 37, 38, 0.85) 100%);
+  @media (min-width: $screen-md) {
+    padding-bottom: 56px;
+  }
+  &__inner {
+    @include container;
+    @media (min-width: $screen-xxxl) {
+      padding: 0 35px;
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    @media (min-width: $screen-lg) {
+      padding: 38px 0 0;
+    }
+  }
+
+  &__description {
+    flex-shrink: 0;
+    font-weight: 500;
+    @media (min-width: $screen-lg) {
+      max-width: 590px;
+      font-size: 26px;
+    }
+    @media (min-width: $screen-xl) {
+      font-size: 34px;
+      line-height: 46px;
+    }
+
+    strong{
+      font-weight: 500;
+    }
+  }
+
+  &__navigation {
+    @media (min-width: $screen-lg) {
+      width: 100%;
+      max-width: 1470px;
+      margin-left: 8%;
+      margin-right: 6.8%;
+      padding-top: 7px;
+    }
+  }
+
+  &__list {
+    li {
+      &:not(:first-child) {
+        @media (min-width: $screen-xl) {
+          margin-left: 57px;
+        }
+      }
+
+      &:nth-child(4) {
+        @media (min-width: $screen-lg) {
+          margin-left: auto;
+        }
+      }
+    }
+  }
+
+  &__logo {
+    @media (min-width: $screen-lg) {
+      flex-shrink: 0;
+    }
+
+    img {
+      height: 80px;
+      @media (min-width: $screen-md) {
+        height: 120px;
+      }
+      @media (min-width: $screen-lg) {
+        height: 200px;
+      }
+    }
+  }
+
+  &__burger {
+    @media (min-width: $screen-md) {
+      display: none;
+    }
+  }
+
+  &__main {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto auto;
+    margin: 0 -15px;
+    padding-bottom: 70px;
+
+    @media (min-width: $screen-md) {
+      display: flex;
+      justify-content: space-between;
+      margin: 0;
+      padding: 30px 20px 70px 8%;
+    }
+    @media (min-width: $screen-xxxl) {
+      padding: 116px 20px 141px 10%;
+    }
+    img {
+      @include img;
+      grid-column: 1 / -1;
+      height: 250px;
+      margin-top: 20px;
+      @media (min-width: $screen-md) {
+        order: 2;
+        width: 320px;
+        height: 402px;
+        margin: 0;
+        margin-top: -67px;
+      }
+      @media (min-width: $screen-lg) {
+        width: 402px;
+        height: 485px;
+        padding-right: 6%;
+      }
+      @media (min-width: $screen-xl) {
+        width: 485px;
+      }
+      @media (min-width: $screen-xxl) {
+        height: 560px;
+      }
+      @media (min-width: $screen-xxxl) {
+        width: 585px;
+        height: 684px;
+      }
+      @media (min-width: 1800px) {
+        width: 760px;
+        padding-right: 7%;
+        margin-top: -155px;
+      }
+    }
+  }
+  &__social{
+    padding: 0 15px;
+    @media (min-width: $screen-md) {
+      position: absolute;
+      left: 15px;
+      top: 38%;
+      flex-direction: column;
+      padding: 0;
+    }
+    @media (min-width: $screen-xxxl) {
+      left: 34px;
+      top: 50%;
+    }
+    li{
+      &:not(:first-child){
+        @media (min-width: $screen-md) {
+          margin-top: 8px;
+        }
+        @media (min-width: $screen-xxxl) {
+          margin-top: 14px;
+        }
+      }
+    }
+  }
+  &__lang{
+    @media (min-width: $screen-md) {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      padding: 0;
+    }
+    @media (min-width: $screen-lg) {
+      right: 7%;
+    }
+    @media (min-width: $screen-xxxl) {
+      right: 6%;
+    }
+  }
+  &__content{
+    grid-column: 1 / -1;
+    margin-top: 20px;
+    padding: 0 15px;
+    @media (min-width: $screen-md) {
+      flex-basis: 52%;
+      order: 1;
+    }
+    @media (min-width: $screen-xxl) {
+      flex-basis: 62%;
+    }
+
+    h1{
+      margin: 0;
+      margin-top: 20px;
+      font-size: 26px;
+      font-weight: 700;
+      text-transform: uppercase;
+      @media (min-width: $screen-lg) {
+        font-size: 38px;
+      }
+      @media (min-width: $screen-xl) {
+        margin-top: 48px;
+        font-size: 50px;
+      }
+      @media (min-width: $screen-xxl) {
+        font-size: 60px;
+      }
+      @media (min-width: $screen-xxxl) {
+        font-size: 70px;
+        line-height: 90px;
+      }
+    }
+  }
+
+  &__button{
+    margin: 0 auto;
+    margin-top: 20px;
+    @media (min-width: $screen-md) {
+      margin: 0;
+      margin-top: 20px;
+    }
+    @media (min-width: $screen-xxxl) {
+      margin-top: 52px;
+    }
+  }
+}
