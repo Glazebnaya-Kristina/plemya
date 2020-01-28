@@ -51,6 +51,10 @@ body {
   @include hide-text;
 }
 
+::selection {
+  background-color: rgba(#FEA4FF, .1);
+}
+
 [tabindex='-1']:focus {
   outline: 0 !important;
 }

@@ -1,8 +1,26 @@
 $(document).ready(function () {
-   // $('.header__slider').slick({
-   //    arrows: false,
-   //    dots: true
-   // });
+   $('.advantages__carousel').slick({
+      arrows: true,
+      dots: false,
+      mobileFirst: true,
+      appendArrows: $('.advantages__controls'),
+      prevArrow: $('.advantages__arrow--prev'),
+      nextArrow: $('.advantages__arrow--next'),
+      responsive: [
+         {
+            breakpoint: 767,
+            settings: {
+               slidesToShow: 2
+            }
+         },
+         {
+            breakpoint: 1279,
+            settings: {
+               slidesToShow: 3
+            }
+         }
+      ]
+   });
 
 
    var lang = document.querySelectorAll('.lang li');

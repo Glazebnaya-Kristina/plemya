@@ -1,0 +1,312 @@
+@import "../../helper/variables";
+@import "../../helper/mixins";
+
+
+.advantages{
+  $block-name: &; // #{$block-name}__element
+
+  position: relative;
+  padding: 59px 0 60px;
+  background: rgb(11, 11, 10);
+  background: linear-gradient(45deg, #080808 58%, rgba(19,18,19,0.9304096639) 88%, rgba(38,37,38,.8) 110%);
+
+
+  &__description{
+    position: absolute;
+    left: 50%;
+    bottom: 174px;
+    transform: translateX(-50%);
+    z-index: -1;
+    width: 100%;
+    text-transform: uppercase;
+    color: #090909;
+    font-weight: 700;
+    font-size: 36px;
+    text-align: center;
+    opacity: .2;
+    @media (min-width: $screen-md) {
+      bottom: 102px;
+      font-size: 83px;
+    }
+    @media (min-width: $screen-lg) {
+      bottom: 135px;
+      font-size: 98px;
+    }
+    @media (min-width: $screen-xl) {
+      font-size: 120px;
+    }
+    @media (min-width: $screen-xxl) {
+      bottom: 84px;
+      font-size: 134px;
+    }
+    @media (min-width: $screen-xxxl) {
+      bottom: 135px;
+      font-size: 165px;
+    }
+  }
+
+  &__inner {
+    @include container;
+    text-align: center;
+    @media (min-width: $screen-md) {
+      padding: 0 7.7%;
+      text-align: left;
+    }
+  }
+
+  &__title{
+    margin: 0;
+    text-align: center;
+    font-weight: 500;
+
+    @media (min-width: $screen-xxxl) {
+      font-size: 50px;
+      line-height: 65px;
+    }
+
+    strong{
+      font-weight: 700;
+    }
+
+    span{
+      display: block;
+    }
+  }
+  
+  &__text{
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+    padding-left: 27px;
+    font-weight: 500;
+    @media (min-width: $screen-xxxl) {
+      margin-top: 53px;
+      padding-left: 112px;
+      font-size: 36px;
+    }
+    &:after{
+      @include pseudo;
+      left: 0;
+      top: 10px;
+      width: 20px;
+      height: 3px;
+      background: linear-gradient(90deg, rgba(89, 49, 182, 1), rgba(254, 164, 255, 1), rgba(174, 54, 202, 1));
+      @media (min-width: $screen-xxxl) {
+        top: 23px;
+        width: 94px;
+      }
+    }
+  }
+
+  &__wrapper-carousel{
+    max-width: 290px;
+    margin: 0 auto;
+    margin-top: 30px;
+    text-align: left;
+    @media (min-width: $screen-md) {
+      max-width: none;
+    }
+    @media (min-width: $screen-lg) {
+      margin-top: 50px;
+    }
+    @media (min-width: $screen-xxxl) {
+      margin-top: 93px;
+    }
+  }
+
+  &__carousel{
+    @include ul-reset;
+    @media (min-width: $screen-md) {
+      margin: 0 -15px;
+    }
+    @media (min-width: $screen-xxxl) {
+      margin: 0 -25px;
+    }
+
+    .slick-slide{
+      @media (min-width: $screen-md) {
+        margin: 0 15px;
+      }
+      @media (min-width: $screen-xxxl) {
+        margin: 0 25px;
+      }
+    }
+  }
+
+  &__item{
+    position: relative;
+    padding-top: 1px;
+    padding-right: 1px;
+    min-height: 230px;
+    &:after,
+    &:before{
+      @include pseudo;
+    }
+
+    &:after{
+      background: linear-gradient(to top, transparent, #FEA4FF);
+      top: 3.5px;
+      bottom: 0;
+      width: 1px;
+      right: 1px;
+    }
+
+    &:before{
+      background: linear-gradient(to left, #FEA4FF, transparent);
+      left: 0;
+      right: 1px;
+      height: 1px;
+      top: 3px;
+    }
+
+    i{
+      font-size: 40px;
+      background: linear-gradient(90deg, rgba(89, 49, 182, 1), rgba(254, 164, 255, 1), rgba(174, 54, 202, 1));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      @media (min-width: $screen-lg) {
+        font-size: 60px;
+      }
+      @media (min-width: $screen-xxxl) {
+        font-size: 102px;
+      }
+    }
+  }
+
+  &__content-wrapper{
+    position: relative;
+    padding-left: 1px;
+    padding-bottom: 1px;
+    &:after,
+    &:before{
+      @include pseudo;
+    }
+
+    &:after{
+      background: linear-gradient(to top, #5173f7, transparent);
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      left: 0;
+    }
+
+    &:before{
+      background: linear-gradient(to left, transparent, #5173f7);
+      left: 1px;
+      right: 0;
+      height: 2px;
+      bottom: 0;
+    }
+  }
+
+  &__item-content{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 255px;
+    padding: 30px 20px 40px;
+    @media (min-width: $screen-lg) {
+      min-height: 358px;
+      padding: 53px 20px 40px;
+    }
+    @media (min-width: $screen-xxxl) {
+      min-height: 536px;
+      padding-bottom: 80px;
+    }
+  }
+
+  &__inner-list{
+    @include ul-reset;
+    max-width: 184px;
+    width: 100%;
+    margin-top: 25px;
+    @media (min-width: $screen-lg) {
+      max-width: 265px;
+    }
+    @media (min-width: $screen-xxxl) {
+      max-width: 352px;
+      margin-top: 83px;
+    }
+  }
+
+  &__inner-item{
+    position: relative;
+    padding-left: 30px;
+    color: #f0f0f0;
+    @media (min-width: $screen-xxxl) {
+      padding-left: 48px;
+      font-size: 30px;
+      line-height: 40px;
+    }
+
+    &:not(:first-child){
+      @media (min-width: $screen-xxxl) {
+        margin-top: 8px;
+      }
+    }
+    &:after{
+      @include pseudo;
+      font-family: "fontello";
+      content: '\e808';
+      left: 0;
+      top: 4px;
+      font-size: 12px;
+      background: linear-gradient(90deg, rgba(89, 49, 182, 1), rgba(254, 164, 255, 1), rgba(174, 54, 202, 1));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      @media (min-width: $screen-xxxl) {
+        font-size: 24px;
+      }
+    }
+  }
+
+  &__controls{
+    @include ul-reset;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 15px;
+    @media (min-width: $screen-xxxl) {
+      margin-top: 47px;
+      margin-right: -5px;
+    }
+  }
+
+  &__arrows{
+    display: flex;
+    align-items: center;
+
+    &:not(:first-child){
+      @media (min-width: $screen-xxxl) {
+        margin-left: 47px;
+      }
+    }
+    i{
+      font-size: 12px;
+      @media (min-width: $screen-xxxl) {
+        font-size: 23px;
+      }
+    }
+  }
+
+  &__arrow{
+    font-size: 12px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    @media (min-width: $screen-lg) {
+      font-size: 18px;
+    }
+  }
+
+  &__icon{
+    &--prev{
+      &:before{
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+}

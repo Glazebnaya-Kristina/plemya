@@ -1,12 +1,13 @@
 // Подключения блоков
 //@import "blocks/time-flag";
 // поключения библиотек
-//@import "libs/title";
+@import "libs/slick";
 @import "helper/container-mixins";
 // стили шаблонов
 // поключения секций
 @import "sections/index/cases";
 @import "sections/index/feedback";
+@import "sections/index/advantages";
 // стили шаблонов
 @import "templates/header";
 @import "templates/footer";
