@@ -1,0 +1,197 @@
+@import "../../helper/variables";
+@import "../../helper/mixins";
+
+
+.works {
+  $block-name: &; // #{$block-name}__element
+
+  padding: 30px 0;
+  background: rgb(11, 11, 10);
+  background: linear-gradient(45deg, #080808 58%, rgba(19, 18, 19, 0.9304096639) 88%, rgba(38, 37, 38, .8) 110%);
+  @media (min-width: $screen-lg) {
+    padding: 65px 0 131px;
+  }
+  &__inner {
+    @include container;
+    @media (min-width: $screen-md) {
+      padding: 0 7%;
+    }
+    @media (min-width: $screen-xxxl) {
+      padding: 0 7.5%;
+    }
+  }
+
+  &__title {
+    @include hide-text;
+  }
+
+  &__description {
+    text-align: center;
+    font-weight: 500;
+    font-size: 26px;
+    @media (min-width: $screen-md) {
+      text-align: left;
+    }
+    @media (min-width: $screen-lg) {
+      font-size: 36px;
+    }
+    @media (min-width: $screen-xxxl) {
+      font-size: 50px;
+    }
+  }
+
+  &__steps {
+    font-weight: 700;
+    background: linear-gradient(90deg, rgb(210, 120, 252), rgb(82, 116, 249));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &__list {
+    @include ul-reset;
+    position: relative;
+    max-width: 220px;
+    margin: 0 auto;
+    margin-top: 25px;
+    z-index: 1;
+    @media (min-width: $screen-md) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 611px;
+      margin-top: 60px;
+    }
+    @media (min-width: $screen-lg) {
+      max-width: 892px;
+    }
+    @media (min-width: $screen-xxxl) {
+      max-width: 1565px;
+      height: 716px;
+      margin-top: 95px;
+    }
+
+    &:after{
+      @include pseudo;
+      display: none;
+      top: 0;
+      left: -8px;
+      //transform: translateX(-50%);
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      background-image: url('../img/decor-dots.png');
+      background-repeat: no-repeat;
+      background-size: 90%;
+      background-position: center;
+      opacity: .7;
+      @media (min-width: $screen-xxxl) {
+        display: block;
+      }
+    }
+  }
+
+  &__item {
+    position: relative;
+    color: #f0f0f0;
+    text-align: center;
+    @media (min-width: $screen-md) {
+      max-width: 43%;
+      text-align: left;
+      //margin-bottom: 35px;
+      margin-bottom: 70px;
+    }
+    @media (min-width: $screen-lg) {
+      max-width: 38%;
+      margin-bottom: 145px;
+    }
+
+    @media (min-width: $screen-xxxl) {
+      max-width: 17%;
+      margin-bottom: 0;
+      font-size: 28px;
+      line-height: 35px;
+    }
+
+    &:not(:first-child) {
+      margin-top: 70px;
+      @media (min-width: $screen-md) {
+        margin-top: 0;
+      }
+    }
+
+    &:not(:last-child) {
+      &:after {
+        @include pseudo;
+        left: 50%;
+        bottom: -50%;
+        transform: translateX(-50%) translateY(50%) rotate(-79deg);
+        width: 52px;
+        height: 27px;
+        background-image: url('../img/dots.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        @media (min-width: $screen-lg) {
+          width: 124px;
+          height: 63px;
+        }
+        @media (min-width: $screen-xxxl) {
+          display: none;
+        }
+      }
+    }
+
+    &:nth-child(1) {
+      @media (min-width: $screen-xxxl) {
+        align-self: flex-end;
+      }
+      &:after {
+        @media (min-width: $screen-md) {
+          left: auto;
+          right: -65px;
+          bottom: 39%;
+          transform: rotate(11deg);
+        }
+        @media (min-width: $screen-lg) {
+          right: -141px;
+        }
+      }
+    }
+
+    &:nth-child(2) {
+      @media (min-width: $screen-xxxl) {
+        padding-top: 92px;
+      }
+    }
+
+    &:nth-child(3) {
+      @media (min-width: $screen-xxxl) {
+        align-self: flex-end;
+        padding-bottom: 112px;
+      }
+      &:after {
+        @media (min-width: $screen-lg) {
+          bottom: -70%;
+        }
+      }
+    }
+
+    &:nth-child(4) {
+      &:after {
+        @media (min-width: $screen-md) {
+          left: -72px;
+          bottom: 39%;
+          transform: rotate(11deg);
+        }
+        @media (min-width: $screen-lg) {
+          left: -195px;
+        }
+      }
+    }
+
+    &:nth-child(5) {
+      @media (min-width: $screen-xxxl) {
+        padding-top: 261px;
+      }
+    }
+  }
+}
