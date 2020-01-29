@@ -4,7 +4,11 @@
 .footer{
   $block-name:                &; // #{$block-name}__element
 
-  &__title{
-    @include hide-text;
+  background-color: #050404;
+  &__inner {
+    padding: 23px 0;
+  }
+  &__name-company{
+    text-align: center;
   }
 }
