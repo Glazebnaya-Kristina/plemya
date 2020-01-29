@@ -1,0 +1,196 @@
+@import "../../helper/variables";
+@import "../../helper/mixins";
+
+
+.contacts{
+  $block-name: &; // #{$block-name}__element
+
+  position: relative;
+  padding: 40px 0 80px;
+  background: rgb(11, 11, 10);
+  background: linear-gradient(45deg, #080808 21%, rgba(19,18,19,0.9304096639) 68%, rgba(38,37,38,0.8) 109%);
+  @media (min-width: $screen-lg) {
+    padding-bottom: 120px;
+  }
+  @media (min-width: $screen-xxxl) {
+    padding: 281px 0 188px;
+  }
+
+  &:after,
+  &:before{
+    @include pseudo;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &:after{
+    left: 0;
+    top: 0;
+    width: 61px;
+    height: 69px;
+    background-image: url('../img/decor-left-big.png');
+    @media (min-width: $screen-md) {
+      width: 100px;
+      height: 118px;
+    }
+    @media (min-width: $screen-xxxl) {
+      width: 316px;
+      height: 363px;
+    }
+  }
+
+  &:before{
+    right: 0;
+    bottom: 0;
+    width: 99px;
+    height: 46px;
+    background-image: url('../img/decor-right-big.png');
+    @media (min-width: $screen-md) {
+      width: 174px;
+      height: 80px;
+    }
+    @media (min-width: $screen-xxxl) {
+      width: 423px;
+      height: 196px;
+    }
+  }
+
+  &__inner {
+    @include container;
+    position: relative;
+    z-index: 1;
+    @media (min-width: $screen-md) {
+      padding: 0 5%;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__title{
+    @include hide-text;
+  }
+
+  &__content{
+    padding: 30px 20px;
+    background-color: #050404;
+    @media (min-width: $screen-md) {
+      max-width: 48%;
+      width: 100%;
+    }
+    @media (min-width: $screen-xxl) {
+      padding: 40px 30px;
+    }
+    //@media (min-width: 1800px) {
+    //  max-width: 44.5%;
+    //}
+
+    @media (min-width: $screen-xxxl) {
+      max-width: 44.5%;
+      padding: 50px 74px 42px;
+    }
+
+    &:last-child{
+      margin-top: 25px;
+      @media (min-width: $screen-md) {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__list{
+    @include ul-reset;
+    margin-top: 25px;
+    @media (min-width: $screen-xxxl) {
+      margin-top: 0;
+    }
+  }
+
+  &__item{
+    padding: 20px 0;
+    @media (min-width: $screen-xxxl) {
+      padding: 46px 0;
+    }
+    &:not(:last-child){
+      border-bottom: 2px solid rgba(#8f8f8f, .12);
+    }
+  }
+
+  &__inner-list{
+    @include ul-reset;
+    @media (min-width: $screen-xxl) {
+      display: flex;
+      //justify-content: space-between;
+    }
+  }
+
+  &__inner-item{
+    &:not(:first-child){
+      margin-top: 5px;
+      @media (min-width: $screen-xxl) {
+        margin-left: 4%;
+        margin-top: 0;
+      }
+      @media (min-width: $screen-xxxl) {
+        margin-left: 60px;
+      }
+      @media (min-width: 1800px) {
+        margin-left: 141px;
+      }
+    }
+  }
+
+  &__link{
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    background: linear-gradient(90deg, rgb(255, 255, 255), rgba(255, 255, 255, 0)), rgb(255, 255, 255);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: background 1s;
+
+    &:hover,
+    &:focus {
+      outline: none;
+      background: linear-gradient(90deg, rgba(89, 49, 182, .7), rgba(254, 164, 255, .7), rgba(174, 54, 202, .8));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transition: background 1s;
+    }
+
+    @media (min-width: $screen-lg) {
+      font-size: 18px;
+    }
+
+    i{
+      margin-right: 5px;
+      background: linear-gradient(90deg, rgba(89, 49, 182, 1) 10%, rgba(254, 164, 255, 1) 60%, rgba(174, 54, 202, 1) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  &__wrapper-form{
+    margin-top: 25px;
+    @media (min-width: $screen-xxxl) {
+      margin-top: 40px;
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+    margin-top: 35px;
+    @media (min-width: $screen-md) {
+      margin: 0;
+      margin-top: 35px;
+    }
+    @media (min-width: $screen-xxxl) {
+      margin-top: 69px;
+    }
+  }
+
+  &__form-list{
+    @media (min-width: $screen-xxxl) {
+      margin-top: 86px;
+    }
+  }
+}

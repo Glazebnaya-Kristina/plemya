@@ -27,9 +27,11 @@
   transition-duration: $transition-time;
   outline: none;
 
+  @media (min-width: $screen-lg) {
+    font-size: 22px;
+  }
   @media (min-width: $screen-xxxl) {
     padding: 7px 0;
-    font-size: 22px;
   }
 
   &::before {

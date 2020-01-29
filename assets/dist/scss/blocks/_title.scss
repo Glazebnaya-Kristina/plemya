@@ -4,7 +4,7 @@
   margin: 0;
   padding-bottom: 10px;
   font-weight: 700;
-  font-size: 26px;
+  font-size: 24px;
   text-align: center;
   @media (min-width: $screen-md) {
     text-align: left;
@@ -27,7 +27,7 @@
       left: 0;
       transform: none;
     }
-    @media (min-width: $screen-xxxl) {
+    @media (min-width: $screen-xl) {
       width: 391px;
     }
   }

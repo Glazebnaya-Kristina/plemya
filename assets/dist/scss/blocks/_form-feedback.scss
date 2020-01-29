@@ -1,0 +1,30 @@
+.form-feedback{
+  &__form-list {
+    @include ul-reset;
+    margin-top: 25px;
+    @media (min-width: $screen-md) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    @media (min-width: $screen-xxxl) {
+      margin-top: 34px;
+    }
+  }
+  &__form-item {
+    @media (min-width: $screen-lg) {
+      max-width: 45%;
+      width: 100%;
+    }
+    @media (min-width: $screen-xxxl) {
+      max-width: 39%;
+    }
+
+    &:not(:first-child) {
+      margin-top: 10px;
+      @media (min-width: $screen-md) {
+        margin-top: 0;
+      }
+    }
+  }
+}
