@@ -5,14 +5,78 @@
   $block-name: &; // #{$block-name}__element
 
   //padding: 45px 0;
+  position: relative;
   background: rgb(11, 11, 10);
   background: linear-gradient(45deg, #0b0b0a 0%, rgba(19, 18, 19, 0.9304096639) 60%, rgba(38, 37, 38, 0.85) 100%);
   @media (min-width: $screen-md) {
     //padding-top: 45px;
     padding-bottom: 56px;
   }
+
+  &:after{
+    @include pseudo;
+    display: none;
+    top: 50%;
+    right: 13px;
+    transform: translateY(-50.1%);
+    width: 212px;
+    height: 86%;
+    background-image: url('../img/decor-right.png');
+    background-repeat: no-repeat;
+    background-size: 100% 98%;
+    background-position: right center;
+    @media (min-width: $screen-lg) {
+      display: block;
+    }
+    @media (min-width: $screen-xxl) {
+      right: 23px;
+      background-size: 100% 99%;
+    }
+    @media (min-width: $screen-xxxl) {
+      right: 46px;
+      transform: translateY(-50.1%);
+      width: 221px;
+      height: 89%;
+      //background-size: cover;
+    }
+  }
+
+  &:before{
+    @include pseudo;
+    display: none;
+    top: 50%;
+    left: 41px;
+    transform: translateY(-50.1%);
+    width: 75px;
+    height: 77%;
+    background-image: url('../img/decor-left.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left bottom;
+    @media (min-width: $screen-md) {
+      display: block;
+    }
+    @media (min-width: $screen-lg) {
+      left: 57px;
+      width: 89px;
+      height: 85%;
+    }
+    @media (min-width: $screen-xxl) {
+      left: 64px;
+      width: 101px;
+      height: 85%;
+    }
+    @media (min-width: $screen-xxxl) {
+      left: 84px;
+      width: 127px;
+      height: 87%;
+      background-size: contain;
+    }
+  }
   &__inner {
     @include container;
+    position: relative;
+    z-index: 1;
     @media (min-width: $screen-xxxl) {
       padding: 0 35px;
     }
@@ -21,7 +85,7 @@
   &__name-company{
     position: absolute;
     left: 50%;
-    bottom: -35px;
+    bottom: -25px;
     transform: translateX(-50%);
     z-index: -1;
     width: 100%;
@@ -32,16 +96,15 @@
     text-align: center;
     opacity: .2;
     @media (min-width: $screen-md) {
-      bottom: 65%;
+      bottom: 27%;
       font-size: 163px;
     }
     @media (min-width: $screen-lg) {
-      bottom: 52%;
       font-size: 209px;
     }
     @media (min-width: $screen-xl) {
       font-size: 280px;
-      bottom: 42%;
+      bottom: 12%;
     }
     @media (min-width: $screen-xxl) {
       font-size: 309px;
@@ -52,6 +115,7 @@
     }
     @media (min-width: 1800px) {
       font-size: 411px;
+      bottom: 16%;
     }
   }
 
@@ -190,6 +254,12 @@
       top: 38%;
       flex-direction: column;
       padding: 0;
+    }
+    @media (min-width: $screen-lg) {
+      left: 25px;
+    }
+    @media (min-width: $screen-xl) {
+      left: 32px;
     }
     @media (min-width: $screen-xxxl) {
       left: 34px;
