@@ -6,7 +6,6 @@
 
   padding: 30px 0 0;
   background: rgb(11, 11, 10);
-  //background: linear-gradient(45deg, #0b0b0a 0%, rgba(19, 18, 19, 0.9304096639) 60%, rgba(38, 37, 38, 0.85) 100%);
   background: linear-gradient(45deg, #0f0d0e 58%, rgba(19,18,19,0.9304096639) 88%, rgba(38,37,38,.8) 110%);
   @media (min-width: $screen-xl) {
     padding: 176px 0 0;
@@ -203,15 +202,56 @@
     }
   }
 
-  &__button {
+  &__wrapper-button{
+    position: relative;
+    max-width: 258px;
     margin: 0 auto;
     margin-top: 35px;
+    border-radius: 50px;
+    overflow: hidden;
     @media (min-width: $screen-md) {
       margin: 0;
       margin-top: 35px;
     }
     @media (min-width: $screen-xxxl) {
       margin-top: 69px;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 0;
+      height: 100%;
+      transition: all .3s;
+      background: linear-gradient(90deg, rgba(89, 49, 182, 1), rgba(254, 164, 255, 1), rgba(174, 54, 202, 1));
+      border-radius: 50px;
+      transform-origin: left;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(90deg, rgba(89, 49, 182, 1), rgba(254, 164, 255, 1), rgba(174, 54, 202, 1));
+      border-radius: 50px;
+      transition: background $transition-time;
+    }
+
+    &:hover{
+      &::after{
+        width: 100%;
+      }
+      .feedback__button{
+        &::before{
+          opacity: 0;
+        }
+      }
     }
   }
 }

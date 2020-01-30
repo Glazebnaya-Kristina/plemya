@@ -54,22 +54,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: -2;
-    background: linear-gradient(90deg, rgba(89, 49, 182, 1), rgba(254, 164, 255, 1), rgba(174, 54, 202, 1));
     border-radius: 50px;
     transition: background $transition-time;
   }
-
-  &:hover,
-  &:focus{
-    &::after{
-      z-index: -1;
-      //animation: opacity .3s;
-    }
-    &::before{
-      z-index: -2;
-      opacity: 0;
-    }
-  }
-
 }

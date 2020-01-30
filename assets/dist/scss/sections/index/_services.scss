@@ -30,13 +30,10 @@
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: left bottom;
-    //z-index: -1;
     @media (min-width: $screen-md) {
-      //background-size: 77% 417px;
       background-size: 74% 368px;
     }
     @media (min-width: $screen-lg) {
-      //background-size: 89% 629px;
       background-size: 86% 618px;
     }
     @media (min-width: $screen-xl) {
@@ -167,7 +164,6 @@
       }
       &:before{
         left: -8%;
-        //bottom: -125%;
         bottom: -92%;
         animation: pulse 1.5s infinite;
         @media (min-width: $screen-lg) {
@@ -179,8 +175,6 @@
           bottom: -24%;
         }
         @media (min-width: $screen-xxxl) {
-          //left: -1%;
-          //bottom: -71%;
           left: -4%;
           bottom: -39%;
         }
@@ -206,7 +200,6 @@
     &:nth-child(2) {
       &:before{
         left: -9%;
-        //bottom: -36%;
         bottom: -25%;
         animation: pulse-reverse 1.5s infinite;
         @media (min-width: $screen-lg) {
@@ -218,8 +211,6 @@
           bottom: 7%;
         }
         @media (min-width: $screen-xxxl) {
-          //left: -23%;
-          //bottom: -15%;
           left: -14%;
           bottom: 8%;
           width: 75px;
@@ -261,8 +252,6 @@
 
     &:nth-child(3) {
       &:before{
-        //left: -12%;
-        //bottom: -28%;
         left: -14%;
         bottom: -10%;
         animation: pulse 1.3s infinite;
@@ -275,8 +264,6 @@
           bottom: 10%;
         }
         @media (min-width: $screen-xxxl) {
-          //left: -19%;
-          //bottom: -8%;
           left: -16%;
           bottom: 24%;
           width: 71px;
@@ -317,8 +304,6 @@
 
     &:nth-child(4) {
       &:before{
-        //left: -31%;
-        //bottom: -7%;
         left: -35%;
         bottom: -18%;
         animation: pulse-reverse 2s infinite;
@@ -327,8 +312,6 @@
           bottom: -4%;
         }
         @media (min-width: $screen-xxxl) {
-          //left: -24%;
-          //bottom: -13%;
           left: -27%;
           bottom: -7%;
           width: 65px;
@@ -382,7 +365,6 @@
     }
 
     &:not(:first-child) {
-      //#{$block-name}__content{
       &:after {
         @include pseudo;
         right: 0;
@@ -394,23 +376,10 @@
           width: 100%;
         }
       }
-
-      //}
-      //border-bottom: 2px solid rgba(143,143,143,0.12);
-      //margin-top: 20px;
     }
   }
 
   &__content {
-    //position: relative;
-    //padding: 20px 0;
-    //@media (min-width: $screen-md) {
-    //  max-width: 80%;
-    //}
-    //@media (min-width: $screen-lg) {
-    //  max-width: 90%;
-    //}
-
     strong {
       font-weight: 700;
       background: linear-gradient(0, #d278fc, #5274f9);
