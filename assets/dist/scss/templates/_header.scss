@@ -8,13 +8,50 @@
   background: rgb(11, 11, 10);
   background: linear-gradient(45deg, #0b0b0a 0%, rgba(19, 18, 19, 0.9304096639) 60%, rgba(38, 37, 38, 0.85) 100%);
   @media (min-width: $screen-md) {
-    padding-top: 45px;
+    //padding-top: 45px;
     padding-bottom: 56px;
   }
   &__inner {
     @include container;
     @media (min-width: $screen-xxxl) {
       padding: 0 35px;
+    }
+  }
+
+  &__name-company{
+    position: absolute;
+    left: 50%;
+    bottom: -35px;
+    transform: translateX(-50%);
+    z-index: -1;
+    width: 100%;
+    text-transform: uppercase;
+    color: #090909;
+    font-weight: 900;
+    font-size: 76px;
+    text-align: center;
+    opacity: .2;
+    @media (min-width: $screen-md) {
+      bottom: 65%;
+      font-size: 163px;
+    }
+    @media (min-width: $screen-lg) {
+      bottom: 52%;
+      font-size: 209px;
+    }
+    @media (min-width: $screen-xl) {
+      font-size: 280px;
+      bottom: 42%;
+    }
+    @media (min-width: $screen-xxl) {
+      font-size: 309px;
+    }
+    @media (min-width: $screen-xxxl) {
+      font-size: 343px;
+      bottom: 28%;
+    }
+    @media (min-width: 1800px) {
+      font-size: 411px;
     }
   }
 
@@ -48,9 +85,12 @@
     @media (min-width: $screen-lg) {
       width: 100%;
       max-width: 1470px;
-      margin-left: 8%;
+      margin-left: 5%;
       margin-right: 6.8%;
       padding-top: 7px;
+    }
+    @media (min-width: $screen-xl) {
+      margin-left: 8%;
     }
   }
 
