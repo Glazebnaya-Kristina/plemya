@@ -1,19 +1,12 @@
 .popup {
   z-index: 4;
   display: none;
-  //overflow-x: hidden;
-  //overflow-y: auto;
-  //overflow: hidden;
   height: auto;
-  //padding: 25px 30px;
-  padding: 11px 15px;
-  //padding-bottom: 26px;
-  padding-bottom: 30px;
-  background-color: #fff;
-  //border: 1px solid $color-gold;
+  padding: 30px 55px;
+  padding-bottom: 65px;
+  background: rgb(11, 11, 10);
+  background: linear-gradient(45deg, #080808 58%, rgba(19, 18, 19, 1) 88%, rgba(38, 37, 38, 1) 110%);
   @media (min-width: $screen-md) {
-    padding: 11px 30px;
-    padding-bottom: 30px;
     height: auto;
   }
 
@@ -61,7 +54,7 @@
 
   &__header {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
   }
 
@@ -69,7 +62,6 @@
     margin: 0;
     font-weight: 400;
     font-size: 22px;
-    //color: $text-color-gray-dark3;
     @media (min-width: $screen-md) {
       font-size: 24px;
     }
@@ -79,12 +71,45 @@
     }
   }
 
-  &__dialog {
-    //overflow-y: auto;
+  &__content {
+    margin-top: 20px;
+    width: 100%;
+    @media (min-width: $screen-md) {
+      margin-top: 48px;
+    }
   }
 
-  &__content {
-    margin-top: 48px;
-    width: 100%;
+  .call {
+
+    &__title{
+      &:after{
+        @media (min-width: $screen-md) {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+
+    &__form-feedback {
+      margin-top: 0;
+
+      p {
+        text-align: center;
+        @media (min-width: $screen-md) {
+          font-size: 28px;
+        }
+      }
+    }
+
+    &__form-list {
+      @media (min-width: $screen-md) {
+        margin-top: 50px;
+      }
+    }
+
+    &__wrapper-button{
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 }

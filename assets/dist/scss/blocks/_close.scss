@@ -10,12 +10,11 @@
     &:hover,
     &:focus{
       outline: none;
-      //color: $color-gold;
     }
     i{
-      font-size: 22px;
+      font-size: 18px;
       @media (min-width: $screen-md) {
-        font-size: 38px;
+        font-size: 22px;
       }
     }
   }
